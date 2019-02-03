@@ -67,7 +67,7 @@ func (s *PreviewProvider) Register(handler PreviewHandler) {
 		minorHandlers = map[string][]PreviewHandler{}
 		s.handlers[major] = minorHandlers
 	}
-	s.handlers[major][minor] = append(s.handlers[major][minor], handler)
+	minorHandlers[minor] = append(minorHandlers[minor], handler)
 }
 
 func NewPreviewProvider() *PreviewProvider {
